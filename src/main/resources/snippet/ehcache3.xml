@@ -1,0 +1,34 @@
+<config xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+	xmlns='http://www.ehcache.org/v3'
+	xsi:schemaLocation="http://www.ehcache.org/v3 https://www.ehcache.org/schema/ehcache-core.xsd
+						http://www.ehcache.org/v3/jsr107 https://www.ehcache.org/schema/ehcache-107-ext.xsd"
+	xmlns:jsr107='http://www.ehcache.org/v3/jsr107'>
+
+	<service>
+		<jsr107:defaults default-template="myDefault"/>
+	</service>
+
+<!--
+	<persistence directory="C:/tmp/asd"/>
+-->
+
+	<cache-template name="myDefault">
+		<!--
+		<key-type>java.lang.Object</key-type>
+		<value-type>java.lang.Object</value-type>
+		-->
+		<!--
+		<expiry>
+			<ttl unit="seconds">3</ttl>
+		</expiry>
+		-->
+		<resources>
+			<heap unit="entries">100000</heap>
+			<!--
+			<offheap unit="MB">10</offheap>
+			<disk unit="MB" persistent="false">10</disk>
+			-->
+		</resources>
+	</cache-template>
+
+</config>
